@@ -1,0 +1,89 @@
+@font-face {
+    font-family: 'Marsden Compressed';
+    src: local('Marsden Compressed Condensed SemiBold'), local('Marsden-Compressed-Condensed-SemiBold'),
+        url('Marsden-Cn-SemiBold.woff2') format('woff2'),
+        url('Marsden-Cn-SemiBold.woff') format('woff'),
+        url('Marsden-Cn-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("bl.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #f0e6e6;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(254, 112, 112, 0.1);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    color: #000000;
+    font-size: 35px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+form {
+    display: grid;
+    grid-gap: 20px;
+}
+
+.consection {
+    display: grid;
+    grid-gap: 6px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+ .countries {
+    margin-top: 5rem;
+ }
+
+.consection1 { 
+    width:100%;
+} 
+
+
+@media screen and (max-width:768px){
+    .image-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0px;
+        height: 604px;
+    }
+
+    
+}

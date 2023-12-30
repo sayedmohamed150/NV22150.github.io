@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link type="text/css" ref="stylesheet" href="ctyles.css"/>
+    <link rel="icon" type="fav.png" href="fav.png">
+    <title>Party Time</title>
+</head>
+<style>
+    .nav_logo{
+    width:180px;
+    display:flex;
+    justify-content:start;
+    align-items:center
+} 
+.navbar{
+    width:100%;
+   height:80px;
+}
+.navLinks{
+    padding-bottom:0px;
+   height:90%;
+}
+.container{
+    width:90%;
+    margin:0 auto;
+    display:flex;
+    justify-content:space-between ;
+    align-items: center;
+    
+}
+.price_wrapper{
+        width:100%;
+        display:flex;
+        justify-content:center;
+
+     }
+     .price_box{
+         width:300px;
+         height:600px;
+         background:black;
+         border-radius:15px;
+         
+     }
+     .price_head_box{
+        width:100%;
+        height:200px;
+        border-top-left-radius:15px;
+        border-top-right-radius: 15px;
+        background:rgb(205,127,50);
+     }
+
+   #middle_box{
+    margin:0px 50px;
+    margin-top:-60px;
+   }
+   .nav_close{display:none;}
+   .navButton{display:none}
+@media screen and (max-width:768px){
+    .navButton{display:block;}
+.nav_close{display:block ; width:100%; text-align:end; padding:10px;}
+    ul.navLinks {
+    position: absolute;
+    background: #bfbaba;
+    z-index: 1;
+    left: -999%;
+    width: 100%;
+    height: 577px;
+    top: 0%;
+    flex-direction: column;
+    display: flex;
+    justify-content: start;
+    align-items: self-start;
+}
+.navbar ul li {
+    display: inline-block;
+    line-height: 24px;
+    font-size: 30px;
+    font-weight: bold;
+}
+    h1.bookbutton {
+    margin-top: 100px;
+}
+    .cbutton{margin-top:30px !important;}
+    .custom_wrapper{
+        width:100%;
+        flex-direction:column;
+    }
+    .left_side {
+        width: 95% !important;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+.left_side a{
+    margin-top:20px;
+}
+.rightSide {
+    width: 95% !important;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+    #middle_box{
+    
+        margin:0px;
+    }
+    .image-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0px;
+        height: 604px;
+    }
+    .hero_des{
+        margin-top:-60px;
+        font-size:16px;
+    }
+   
+.gallery h3 {
+    text-align: center;
+    font-size: 26px;
+
+}
+
+.bottom-text img {
+    width: 100%;
+}
+.bottom-text {
+    width: 90%;
+}
+
+.price_wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+ 
+}
+.price_box{
+    width: 100%;
+    height: 600px;
+    background: black;
+    border-radius: 15px;
+    margin: 50px 0px;
+         
+     }
+
+
+}
+
+@media screen and(max-width:500px){
+    h1.bookbutton {
+    margin-top: 100px;
+}
+
+
+    
+}
+</style>
+
+<body>
+    <!--The Header Logo + Navigation Bar-->
+    <header>
+        
+        <nav class="navbar" >
+          <div style="height:90px" class="container">
+            <div class="nav_logo">
+                <a href="#" style="font-size:25px; font-weight:bold;margin-bottom:0px;padding-bottom:0px;">Party Time</a>
+            </div>
+        <ul class="navLinks">
+            <li class="nav_close"><button class="close" onclick="navClose()" style="outline:none;border-radius:50%;cursor: pointer; "><img style="width:30px; height:30px; border-radius:50%;" src="close.png" alt="close"/></button></li>
+            <li><a class="close" onclick="navClose()" href="#tran">Service</a></li>
+            <li><a class="close" onclick="navClose()" href="#pak">Package</a></li>
+            <li><a class="close" onclick="navClose()" href="#tran">About us</a></li>
+            <li><a class="close" onclick="navClose()" href="contact.html">Contact</a></li>
+        </ul>
+
+        <button onclick="navOpen()" class="navButton" style="outline:none;border-radius:50%;cursor: pointer; "><img style="width:30px; height:27px; border-radius:50%;" src="nav.png" alt="nav"/></button>
+          </div>
+
+        </nav>
+    </header>
+
+    <section class="galleryslide">
+        <div class="image-container">
+
+            <div class="slide show">
+                <img src="table.jpg" alt="Slide 1">
+                <div class="overlay"></div>
+            </div>
+            <div class="slide">
+                <img src="firework.jpg" alt="Slide 2">
+                <div class="overlay"></div>
+            </div>
+            <div class="slide">
+                <img src="party.jpg" alt="Slide 3">
+                <div class="overlay"></div>
+            </div>
+            <div class="slide">
+                <img src="ppl.jpg" alt="Slide 4">
+                <div class="overlay"></div>
+            </div>
+
+
+        </div>
+
+        <script>
+            let slideIndex = 0;
+            function showSlides() {
+                let i;
+                const slides = document.getElementsByClassName("slide");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {
+                    slideIndex = 1;
+                }
+                slides[slideIndex - 1].style.display = "block";
+                setTimeout(showSlides, 5000); // Change slide every 10 seconds
+            }
+            document.addEventListener("DOMContentLoaded", showSlides);
+        </script>
+
+        <div class="intro">
+            <h3>Party Time</h3>
+            <p class="hero_des">Welcome to Party Time your go-to hub for stress-free event planning!<br />Navigate effortlessly through
+                our revamped website featuring vibrant visuals, organized sections, and user-friendly design.<br />
+                Explore our services with captivating images and consider our convenient packages for an unforgettable
+                experience.<br />Need assistance or have questions? Connect with us directly through the "Contact Us"
+                section.<br /> Your feedback matters, and we're here to make your event planning journey seamless and
+                enjoyable. <br />Let's create memories together!
+            </p>
+            <h1 class="bookbutton" style="vertical-align: middle"><span><a href="contact.html">Contact Us</a></span></h1>
+        </div>
+    </section>
+
+
+    <!-- Services and Products Section -->
+    <section class="gallery">
+
+        <h3 id="tran">SERVICES AND PRODUCTS</h3><br /><br /><br />
+
+        <div class="image-container1">
+            <div class="bottom-text">
+                <img src="entertainment.jpg" alt="entertainment">
+                <div class="text-overlay">Entertainment</div>
+            </div>
+            <div class="bottom-text">
+                <img src="themedevent.jpg" alt="themedevent">
+                <div class="text-overlay">Themed Event</div>
+            </div>
+
+            <div class="bottom-text">
+                <img src="lastimage.png" alt="specialcelebration">
+                <div class="text-overlay">Special Celebrations</div>
+            </div>
+            <div class="bottom-text">
+                <img src="fundraisers.jpg" alt="fundraisers">
+                <div class="text-overlay">Fundraisers</div>
+            </div>
+            <div class="bottom-text">
+                <img src="bespokecatering.jpg" alt="bespokecatering">
+                <div class="text-overlay">Bespoke Catering</div>
+            </div>
+            <div class="bottom-text">
+                <img src="themes&props.jpg" alt="themes&props">
+                <div class="text-overlay">Themes & Props</div>
+            </div>
+            <div class="bottom-text">
+                <img src="Invitations&Paintwork.jpg" alt="Invitations&Paintwork">
+                <div class="text-overlay">Invitations & Paintwork</div>
+            </div>
+            <div class="bottom-text">
+                <img src="sound&lighting.jpg" alt="sound&lighting">
+                <div class="text-overlay">Sound & Lighting</div>
+            </div>
+        </div>
+    </section>
+
+   
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+     <div style="background:#192B6C; padding:100px 0px; margin-top:100px;">
+        <h2 style="text-align:center; font-size:44px; color:white; font-weight:bold;" id="pak">OUR PACKAGES</h2>
+        <div class="container main_price" style="margin-top:160px">
+            <div class="price_wrapper" style="flex-wrap:wrap">
+             
+             
+                <div class="price_box" style="box-shadow: 0 0 10px 5px, 0 0 25px 20px #cd7f32, 0 0 30px 25px rgb(219 127 35); background:white;">
+                 <div class="price_head_box">
+                     <h2 class="price_title" style="color:#6b3500; padding-top:50px; text-align:center; font-size:44px; font-weight:bold">BRONZE</h2>
+                 </div>
+                 <div class="head_wraper" style="margin-top:-60px; margin-left:50px;  width:190px;  border-radius:15px;padding:5px ; background:white;">
+                    <h2 style="font-size:54px ; font-weight:bold; color:#6b3500; text-align:center;">$150</h2>
+                   <p style="color:#6b3500; font-size:21px;margin-top:20px; font-weight:bold">
+                    • Room decorations <br/> balloons, banners
+                   </p>
+    
+                   <p style="color:#6b3500; font-size:21px;margin-top:20px; font-weight:bold">
+                    • Table decorations <br/> centrepieces, gifts
+                   </p>
+    
+                   <p style="color:#6b3500; font-size:21px;margin-top:20px; font-weight:bold">
+                    • DJ entertainment
+                   </p>
+                   <p style="color:#6b3500; font-size:21px;margin-top:20px; font-weight:bold">
+                    • Cold buffet
+                   </p>
+    
+    
+                 <div  style="margin-top:60px;" >
+                    <a style="    box-shadow: 0 0 10px 5px, 0 0 25px 20px #bba896, 0 0 30px 25px rgb(251 251 251); background:white; margin-left:15px; background:#cd7f32; font-size:15px; margin-top:100px; color:white;font-weight:bold; padding:15px 30px; border-radius:50px; " href="/contact.html">
+                        CONTACT US
+                       </a>
+                 </div>
+                 </div>
+              </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+              <div id="middle_box" class="price_box" style="box-shadow: 0 0 10px 5px, 0 0 25px 20px #a28a00, 0 0 30px 25px rgba(207,177,12,1); background:white;">
+                <div style="background:rgba(207,177,12,1)" class="price_head_box">
+                    <h2 class="price_title" style="color:rgb(104, 89, 7); padding-top:50px; text-align:center; font-size:44px; font-weight:bold">GOLD</h2>
+                </div>
+                <div class="head_wraper" style="margin-top:-60px; margin-left:50px;  width:190px;  border-radius:15px;padding:5px ; background:white;">
+                   <h2 style="font-size:54px ; font-weight:bold; color:rgb(104, 89, 7); text-align:center;">$350</h2>
+                  <p style="color:rgb(104, 89, 7); font-size:21px;margin-top:20px; font-weight:bold">
+                   • Room decorations <br/> balloons, banners
+                  </p>
+    
+                  <p style="color:rgb(104, 89, 7); font-size:21px;margin-top:20px; font-weight:bold">
+                   • Table decorations <br/> centrepieces, gifts
+                  </p>
+    
+                  <p style="color:rgb(104, 89, 7); font-size:21px;margin-top:20px; font-weight:bold">
+                   • DJ entertainment
+                  </p>
+                  <p style="color:rgb(104, 89, 7); font-size:21px;margin-top:20px; font-weight:bold">
+                   • Cold buffet
+                  </p>
+    
+    
+                <div style="margin-top:60px;" >
+                   <a style="    box-shadow: 0 0 10px 5px, 0 0 25px 20px #bba896, 0 0 30px 25px rgb(251 251 251); background:white; margin-left:15px; background:rgba(207,177,12,1); font-size:15px; margin-top:100px; color:white;font-weight:bold; padding:15px 30px; border-radius:50px; " href="/contact.html">
+                       CONTACT US
+                      </a>
+                </div>
+                </div>
+             </div>
+    
+    
+    
+    
+             <div class="price_box" style="box-shadow: 0 0 10px 5px, 0 0 25px 20px #c0c0c0, 0 0 30px 25px rgba(192,192,192,1); background:white;">
+                <div class="price_head_box" style="background:rgb(192,192,192)">
+                    <h2 class="price_title" style="color:#4c4848; padding-top:50px; text-align:center; font-size:44px; font-weight:bold">SILVER</h2>
+                </div>
+                <div class="head_wraper" style="margin-top:-60px; margin-left:50px;  width:190px;  border-radius:15px;padding:5px ; background:white;">
+                   <h2 style="font-size:54px ; font-weight:bold; color:#4c4848; text-align:center;">$250</h2>
+                  <p style="color:#4c4848; font-size:21px;margin-top:20px; font-weight:bold">
+                   • Room decorations <br/> balloons, banners
+                  </p>
+    
+                  <p style="color:#4c4848; font-size:21px;margin-top:20px; font-weight:bold">
+                   • Table decorations <br/> centrepieces, gifts
+                  </p>
+    
+                  <p style="color:#4c4848; font-size:21px;margin-top:20px; font-weight:bold">
+                   • DJ entertainment
+                  </p>
+                  <p style="color:#4c4848; font-size:21px;margin-top:20px; font-weight:bold">
+                   • Cold buffet
+                  </p>
+    
+    
+                <div style="margin-top:60px;" >
+                   <a style="    box-shadow: 0 0 10px 5px, 0 0 25px 20px #bba896, 0 0 30px 25px rgb(251 251 251); background:white; margin-left:15px; background:rgb(192,192,192); font-size:15px; margin-top:100px; color:white;font-weight:bold; padding:15px 30px; border-radius:50px; " href="/contact.html">
+                       CONTACT US
+                      </a>
+                </div>
+                </div>
+             </div>
+              
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+       
+
+  <div class="custom_wrapper" style="margin-top:100px;">
+    <div class="left_side" style="width:30%;background:rgba(102,141,196,1); border-top-left-radius: 15px; border-bottom-left-radius: 15px; padding:10px; display:flex; flex-direction:column; justify-content:space-between;">
+        <h2 style="color:white; font-size: 44px; text-align:center; padding-top:50px;">CUSTOM PACKAGE</h2>
+        <h1 class="cbutton" style="font-size:15px; width:100%; text-align:center;margin-bottom:40px; color:white "><a style="background:rgb(17, 51, 98) 50%;padding:15px 18px ; border-radius:50px; color:white;" href="contact.html">CONTACT US</a></h1>
+    </div> 
+
+    <div class="rightSide" style="background:white; width:70%; padding:40px 10px; border-top-right-radius: 15px; border-bottom-right-radius: 15px;">
+        <p style="color:#84a5ba;font-size:20px;">
+            Custom packages are available for specific parties, additional
+            decorations and additional staff. Clients must contact the company to
+            arrange any custom packages.<br />
+            <br /> We offer custom packages for different events with extra decorations and staff.
+            To arrange a personalized package, just reach out to us. We're here to make your event exactly how you want
+            it.
+            Contact us to discuss your ideas and let's make your celebration unique!<br />
+            <br />Just get in touch with us, and we'll help you create the perfect package for your occasion. Your event
+            is unique, and we're here to make sure it's exactly how you want it. Contact us to discuss your ideas and
+            let's make your celebration even more memorable together!
+        </p>
+    </div> 
+     </div>
+  </div>
+     
+   
+     
+
+ 
+ 
+    <!--Contact Section-->
+
+
+    <footer>
+        <div class="bottom-text5">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#tran">Services</a>
+                    <a href="#pak">Packages</a>
+                    <a href="#">About Us</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="icon">
+                    <a href="contact.html"><img src="facebook.png"></a>
+                    <a href="contact.html"><img src="twitter.png"></a>
+                    <a href="contact.html"><img src="instagram.png"></a>
+                    <a href="contact.html"><img src="youtube.png"></a>
+                    <a href="contact.html"><img src="tiktok.png"></a>
+                    <a href="contact.html"><img src="linkedin.png"></a>
+                    <a href="contact.html"><img src="pinterest.png"></a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                Copyright &copy; NV22150
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+         const navOp = document.querySelector(".navButton");
+         const navClo = document.querySelector('.close');
+          const navLink = document.querySelector('.navLinks');
+        function navOpen(){
+         
+          navOp.addEventListener("click", ()=>{
+              navLink.style.left = '0%'
+          })
+        }
+
+
+        function navClose(){
+            navClo.addEventListener('click', ()=>{
+                navLink.style.left = '-9999%'
+            })
+        }
+
+    </script>
+</body>
+</html>

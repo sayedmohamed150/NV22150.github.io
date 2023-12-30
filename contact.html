@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ctyles.css">
+    <link rel="icon" type="fav.png" href="fav.png">
+    <title>Contact Us</title>
+</head>
+<body>
+
+    
+<div class="container">
+
+    <h2>Contact Us</h2>
+
+    <form action="#" method="post" id="contact-form">
+        <div class="consection">
+            <label for="name">First Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your first name...">
+        </div>
+        <div class="consection">
+            <label for="lastname">Last Name:</label>
+            <input type="lastname" id="lastname" name="lastname" required placeholder="Enter your last name...">
+        </div>
+
+        <div class="consection">
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required placeholder="Enter your phone nom...">
+        </div>
+
+        <div class="consection">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email...">
+        </div>
+
+        <div class="consection2">
+            <label for="phone">CPR:</label>
+            <input type="tel" id="phone" name="phone" required placeholder="Enter your CPR...">
+        </div>
+
+        <div class="consection1">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+
+        <label for="countries">Your Country:</label>
+        <select class="consection">
+            <option value="Bahrain">Bahrain</option>
+            <option value="Saudi Arabia">Saudi Arabia</option>
+            <option value="QA" label="Qatar">Qatar</option>
+            <option value="United Arab Emirates">United Arab Emirates</option>
+            <option value="KW">Kuwait</option>
+            <option value="OM">Oman</option>
+        </select>
+
+        <div class="consection">
+            <label for="dropdown">Package:</label>
+            <select id="dropdown" name="dropdown" required>
+              <option value="none">Choose the package you want..</option>
+              <option value="bronze">Bronze</option>
+              <option value="silver">Gold</option>
+              <option value="gold">Silver</option>
+              <option value="custom">Custom</option>
+            </select>
+
+        <div class="consection">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="8" required></textarea>
+        </div>
+
+        <button onclick="confirmAndRedirect()">Submit</button>
+    </form>
+     
+  </form>
+</div>
+<script>
+  function confirmAndRedirect() {
+      var isConfirmed = confirm("Are you sure you want to proceed?");
+      if (isConfirmed) {
+          window.location.href="index.html"; // Replace with the desired URL
+      }
+}
+</script>
+
+</body>
+</html>
